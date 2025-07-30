@@ -5,6 +5,7 @@ import LazyLoad from 'react-lazyload'
 import toast from 'react-hot-toast'
 import confetti from 'canvas-confetti'
 import { useCart } from './CartContext'
+import { asset } from '../utils/asset'
 
 const ProductCard = ({ product, onViewDetails }) => {
   const [isLiked, setIsLiked] = useState(false)
@@ -92,7 +93,7 @@ const ProductCard = ({ product, onViewDetails }) => {
               onLoad={() => setImageLoaded(true)}
               onError={(e) => {
                 console.error('Error loading image:', product.img);
-                e.currentTarget.src = '/images/placeholder.jpg';
+                e.currentTarget.src = asset('images/placeholder.jpg');
                 setImageLoaded(true);
               }}
               loading="lazy"

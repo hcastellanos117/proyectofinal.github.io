@@ -5,6 +5,7 @@ import AdvancedFilters from '../components/AdvancedFilters'
 import { products } from '../data/products'
 import { useCart } from '../components/CartContext'
 import confetti from 'canvas-confetti'
+import { asset } from '../utils/asset'
 import { 
   MagnifyingGlassIcon,
   AdjustmentsHorizontalIcon,
@@ -387,7 +388,7 @@ const Catalog = () => {
                 incluyendo descripciones detalladas, precios y especificaciones técnicas.
               </p>
               <a 
-                href="/images/Catolog/Catalogo LUAM .pdf"
+                href={asset('images/Catolog/Catalogo LUAM .pdf')}
                 download="Catalogo_LUAM_Candles.pdf"
                 className="bg-gradient-to-r from-earth-600 to-candle-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-earth-700 hover:to-candle-700 transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >

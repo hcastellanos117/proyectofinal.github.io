@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCart } from '../components/CartContext';
 import { Link } from 'react-router-dom';
+import { asset } from '../utils/asset';
 import { Trash2, Plus, Minus, ShoppingBag } from 'lucide-react';
 
 const Cart = () => {
@@ -63,7 +64,7 @@ const Cart = () => {
                           alt={item.name}
                           className="h-20 w-20 object-cover rounded-lg"
                           onError={(e) => {
-                            e.target.src = '/images/placeholder.jpg';
+                            e.target.src = asset('images/placeholder.jpg');
                           }}
                         />
                       </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import { asset } from '../utils/asset'
 import { 
   HeartIcon,
   SparklesIcon,
@@ -49,19 +50,19 @@ const About = () => {
       year: 2023,
       title: 'Reconocimiento Nacional',
       description: 'Nos convertimos en una marca reconocida en Honduras por nuestras velas artesanales.',
-      image: './images/timeline-2023.jpg'
+      image: asset('images/timeline-2023.jpg')
     },
     {
       year: 2024,
       title: 'Innovación Continua',
       description: 'Seguimos innovando con nuevas fragancias y técnicas, manteniendo nuestra esencia artesanal.',
-      image: './images/timeline-2024.jpg'
+      image: asset('images/timeline-2024.jpg')
     },
     {
       year: 2025,
       title: 'Expansión Internacional',
       description: 'Planeamos llevar Luam Candles a mercados internacionales, compartiendo nuestra pasión por la luz y el aroma.',
-      image: './images/timeline-2025.jpg'
+      image: asset('images/timeline-2025.jpg')
     }
   ]
 

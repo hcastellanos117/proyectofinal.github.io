@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import HeroVideos from '../components/HeroVideos'
 import ProductCard from '../components/ProductCard'
 import { featuredProducts } from '../data/products'
+import { asset } from '../utils/asset'
 import { 
   HeartIcon, 
   SparklesIcon, 
@@ -264,15 +265,15 @@ const Home = () => {
               {/* Collage de 9 fotos - Columna izquierda */}
               <div className="grid grid-cols-3 gap-3 md:order-2 lg:order-1">
                 {[
-                  "/images/1-rosa-lavanda.png",
-                  "/images/2-espiritu-corcel.png",
-                  "/images/3-sol-flor.png",
-                  "/images/4-encanto-rosa.png",
-                  "/images/5-canela-especiada.png",
-                  "/images/6-ramo-encantado.png",
-                  "/images/7-encanto-osito.png",
-                  "/images/8-menta-refrescante.png",
-                  "/images/9-sandalo-mistico.png"
+                  asset('images/1-rosa-lavanda.png'),
+        asset('images/2-espiritu-corcel.png'),
+        asset('images/3-sol-flor.png'),
+        asset('images/4-encanto-rosa.png'),
+        asset('images/5-canela-especiada.png'),
+        asset('images/6-ramo-encantado.png'),
+        asset('images/7-encanto-osito.png'),
+        asset('images/8-menta-refrescante.png'),
+        asset('images/9-sandalo-mistico.png')
                 ].map((img, index) => (
                   <div 
                     key={index} 
