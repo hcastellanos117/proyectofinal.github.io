@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import placeholderImg from '../assets/placeholder.jpg'
+import { asset } from '../utils/asset'
 
 const HeroImageSlider = ({ className = "" }) => {
   const [images, setImages] = useState([])
@@ -91,7 +91,7 @@ const HeroImageSlider = ({ className = "" }) => {
 
   const handleImageError = (e) => {
     console.error('Error al cargar imagen del slider');
-    e.currentTarget.src = placeholderImg;
+    e.currentTarget.src = asset('images/placeholder.jpg');
   }
 
   return (
