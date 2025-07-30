@@ -53,7 +53,7 @@ const HeroImageSlider = ({ className = "" }) => {
         .join(' ')
       
       return {
-        src: `/images/${imageName}`,
+        src: asset(`images/${imageName}`),
         alt: `Vela ${formattedName} - Luam Candles`,
         title: formattedName
       }
