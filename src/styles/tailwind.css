@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-gray-800 bg-cream-50;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-medium py-3 px-6 rounded-lg transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent;
+  }
+  
+  .hero-bg {
+    background: linear-gradient(135deg, #fefcf9 0%, #fdf8f0 50%, #faf0e1 100%);
+  }
+  
+  .floating-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  }
+  
+  .backdrop-blur-custom {
+    backdrop-filter: blur(10px);
+  }
+  
+  .parallax-slow {
+    will-change: transform;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #e879a7 0%, #d97706 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .ripple-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ripple-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+  
+  .ripple-effect:active::before {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-cream-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-500;
+}
+
+/* Loading animation */
+.loading-spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #e879a7;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animaciones para partículas */
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-10px) translateX(5px); }
+  50% { transform: translateY(-5px) translateX(-5px); }
+  75% { transform: translateY(-15px) translateX(3px); }
+}
+
+/* Animación de mariposa */
+@keyframes butterfly-flutter {
+  0%, 100% { transform: scale(1) translateX(0px) translateY(0px); }
+  25% { transform: scale(1.05) translateX(5px) translateY(-3px); }
+  50% { transform: scale(1.02) translateX(-3px) translateY(5px); }
+  75% { transform: scale(1.05) translateX(8px) translateY(-2px); }
+}
+
+/* Animación de bounce suave */
+@keyframes soft-bounce {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Shimmer skeleton */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Clases de utilidad para animaciones */
+.particle-animation {
+  animation: particle-float 8s ease-in-out infinite;
+}
+
+.butterfly-animation {
+  animation: butterfly-flutter 6s ease-in-out infinite;
+}
+
+.soft-bounce-animation {
+  animation: soft-bounce 2s ease-in-out infinite;
+}
+
+/* Animaciones para la sección Hecho con Amor */
+.gallery-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.gallery-item:hover {
+  transform: scale(1.04) rotate(var(--rotate-value, 2deg));
+  z-index: 10;
+}
+
+.gallery-item:nth-child(odd):hover {
+  --rotate-value: 2deg;
+}
+
+.gallery-item:nth-child(even):hover {
+  --rotate-value: -2deg;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.info-card-icon {
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* Modo oscuro */
+.dark {
+  color-scheme: dark;
+}
+
+.dark body {
+  @apply bg-gray-900 text-gray-100;
+}
+
+.dark .hero-bg {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 50%, #0f172a 100%);
+}
+
+/* Efectos de hover mejorados */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Efecto de resplandor cálido para sección Nuestra Historia */
+.story-wrapper, .love-made-wrapper {
+  will-change: box-shadow;
+  animation: candleGlow 4s ease-in-out infinite;
+}
+
+@keyframes candleGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 199, 125, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 50px 0 rgba(255, 199, 125, 0.25);
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  @keyframes candleGlow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(255, 199, 125, 0.15);
+    }
+    50% {
+      box-shadow: 0 0 30px 0 rgba(255, 199, 125, 0.25);
+    }
+  }
+}
+
+/* Respeto por prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .story-wrapper {
+    animation: none;
+    box-shadow: 0 0 0 0 rgba(255, 199, 125, 0.18);
+  }
+  
+  .love-made-wrapper {
+    animation: none;
+    box-shadow: 0 0 0 0 rgba(255, 199, 125, 0.18);
+  }
+  
+  .gallery-item {
+    transition: none !important;
+  }
+  
+  .info-card {
+    animation: none !important;
+  }
+  
+  .info-card-icon {
+    animation: none !important;
+  }
+}
