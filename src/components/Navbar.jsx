@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Bars3Icon, XMarkIcon, ShoppingCartIcon } from '@heroicons/react/24/outline'
-import { useCart } from '../context/CartContext'
+import { useCart } from './CartContext'
 import logoLuam from '../assets/logo-luam.png'
 
 const Navbar = () => {

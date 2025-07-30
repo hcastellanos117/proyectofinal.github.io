@@ -3,7 +3,7 @@ import ProductCard from '../components/ProductCard'
 import CategoryFilter from '../components/CategoryFilter'
 import AdvancedFilters from '../components/AdvancedFilters'
 import { products } from '../data/products'
-import { useCart } from '../context/CartContext'
+import { useCart } from '../components/CartContext'
 import confetti from 'canvas-confetti'
 import { 
   MagnifyingGlassIcon,

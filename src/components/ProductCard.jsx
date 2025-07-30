@@ -4,7 +4,7 @@ import { HeartIcon as HeartSolidIcon } from '@heroicons/react/24/solid'
 import LazyLoad from 'react-lazyload'
 import toast from 'react-hot-toast'
 import confetti from 'canvas-confetti'
-import { useCart } from '../context/CartContext'
+import { useCart } from './CartContext'
 
 const ProductCard = ({ product, onViewDetails }) => {
   const [isLiked, setIsLiked] = useState(false)
